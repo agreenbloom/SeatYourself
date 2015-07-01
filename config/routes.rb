@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'reservations/create'
+
+  get 'reservations/destroy'
+
+  get 'reservations/update'
+
   get 'tables/show'
 
   get 'tables/update'
