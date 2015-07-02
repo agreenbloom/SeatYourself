@@ -7,7 +7,6 @@
   resources :users
   resources :restaurants do
     resources :reservations
-    resources :tables, only: [:show, :update, :destroy]
   end
 
   get 'login' => 'user_sessions#new', :as => :login
