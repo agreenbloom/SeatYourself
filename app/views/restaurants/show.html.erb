@@ -1,2 +1,9 @@
-<h1>Restaurants#show</h1>
-<p>Find me in app/views/restaurants/show.html.erb</p>
+<h1>Restaurants</h1>
+
+<% if current_user %>
+  <h4>New reservation</h4>
+  <%= render 'reservations/form' %>
+<% end %>
+
+<p class ="name">  <strong>Name: <%= @restaurant.name %></strong> </p>
+

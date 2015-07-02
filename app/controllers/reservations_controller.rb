@@ -1,17 +1,38 @@
 class ReservationsController < ApplicationController
+  before_filter :load_restaurant
+
+  def show
+    @reservation = Reservation.find(params[:id])
+  end
+
   def create
-    reservation = Reservation.new(reservation_params)
-    reservation.save
+    @reservation = Reservation.new #(reservation_params)
+    @reservation.user = current_user
+
+    if @reservation.save
+      redirect_to restaurants_path, notice: 'Reservation Created Successfully'
+    else
+      render 'restaurants/show'
+    end
+  end
+
+  def index
+    @reservation = Reservation.all
+
   end
 
   def destroy
+    @reservation = Reservation.find(params[:id])
+    @reservation.destroy
   end
 
-  def update
-  end
 
-  private
+private
   def reservation_params
-    params.require(:reservation).permit(:user_id, :table_id)
+    params.require(:reservation).permit(:date, :time)
+  end
+
+  def load_restaurant
+    @restaurant = Restaurant.find(params[:restaurant_id])
   end
 end

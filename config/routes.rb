@@ -1,22 +1,12 @@
-Rails.application.routes.draw do
+  Rails.application.routes.draw do
 
-  get 'reservations/create'
-
-  get 'reservations/destroy'
-
-  get 'reservations/update'
-
-  get 'tables/show'
-
-  get 'tables/update'
-
-  get 'tables/destroy'
 
   root :to => 'users#index'
 
   resources :user_sessions
   resources :users
-  resources :restaurants, only: [:new, :create, :show] do
+  resources :restaurants do
+    resources :reservations
     resources :tables, only: [:show, :update, :destroy]
   end
 
