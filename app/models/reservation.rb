@@ -1,12 +1,17 @@
 class Reservation < ActiveRecord::Base
   belongs_to :user
-  belongs_to :table
+  belongs_to :restaurant
 
-  # validates :not_full
+  #validates :not_full
 
-  # def not_full
-  #   if full
-  #     self.errors.add(:not_full, "Restaurant at capacity")
-  #   end
-  # end
+  #def not_full
+   #<%# if @restaurant == @restaurant.capacity %>
+     # <% #@reservation.errors.full_messages.each do |msg| %>
+      #<li>
+       # <%= #msg: "Restaurant at capacity" %>
+      #</li>
+    #  <% end %>
+    #end
+  #end
+
 end

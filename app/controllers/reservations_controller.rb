@@ -6,8 +6,9 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    @reservation = Reservation.new #(reservation_params)
+    @reservation = @restaurant.reservations.build(reservation_params)
     @reservation.user = current_user
+    #@restuaruant.not_full?
 
     if @reservation.save
       redirect_to restaurants_path, notice: 'Reservation Created Successfully'
@@ -29,10 +30,12 @@ class ReservationsController < ApplicationController
 
 private
   def reservation_params
-    params.require(:reservation).permit(:date, :time)
+    params.require(:reservation).permit(:date, :time, :Partysize)
   end
 
   def load_restaurant
     @restaurant = Restaurant.find(params[:restaurant_id])
   end
 end
+
+

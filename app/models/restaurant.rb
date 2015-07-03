@@ -1,8 +1,7 @@
 class Restaurant < ActiveRecord::Base
   # belongs_to :owner, class_name: "User"
 
-  has_many :tables
-  has_many :reservations, through: :tables
+  has_many :reservations
 
   belongs_to :category
 end

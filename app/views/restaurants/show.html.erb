@@ -1,9 +1,18 @@
 <h1>Restaurants</h1>
 
-<% if current_user %>
-  <h4>New reservation</h4>
-  <%= render 'reservations/form' %>
-<% end %>
+<p id="notice"><%= notice %></p>
+
+
 
 <p class ="name">  <strong>Name: <%= @restaurant.name %></strong> </p>
+<p class ="location">  <strong>Location: <%= @restaurant.location %></strong> </p>
+<p class ="capacity">  <strong>Capacity: <%= @restaurant.capacity %></strong> </p>
+
+<% if current_user %>
+  <h4>New reservation</h4>
+  <% render 'reservations/form' %>
+<% end %>
+
+<%= link_to 'New restaurant', new_restaurant_path %>
+
 

@@ -8,5 +8,5 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: true
 
   has_many :reservations
-  has_many :tables, through: :reservations
+  has_many :reservations
 end

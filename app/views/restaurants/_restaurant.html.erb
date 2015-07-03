@@ -1,5 +1,14 @@
-<p>
-  name: <%= restaurant.name %>
-  <br>
-  location: <%= restaurant.location  %>
-</p>
+
+
+  <p>
+
+        name: <%= restaurant.name %><br>
+        location: <%= restaurant.location  %><br>
+        capacity: <%= restaurant.capacity %> <br>
+        <%= link_to 'Edit', edit_restaurant_path(restaurant) %>
+        <%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </p>
+
+
+
+
