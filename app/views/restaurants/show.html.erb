@@ -5,5 +5,7 @@
 <p class ="location">  <strong>Location:</strong>  <%= @restaurant.location %></p>
 <p class ="capacity">  <strong>Capacity:</strong>  <%= @restaurant.capacity %></p>
 
-<h4>New reservation</h4>
- <%= render 'reservations/form' %>
+ <% if current_user %>
+  <h4>New reservation</h4>
+  <%= render 'reservations/form' %>
+ <% end %>
