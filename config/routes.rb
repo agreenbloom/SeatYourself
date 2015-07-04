@@ -1,14 +1,10 @@
   Rails.application.routes.draw do
 
-
-  get 'categories/index'
-
-  get 'categories/show'
-
-  root :to => 'users#index'
+  root :to => 'restaurants#index'
 
   resources :user_sessions
   resources :users
+  resources :categories, only: [:show, :index]
   resources :restaurants do
     resources :reservations
   end

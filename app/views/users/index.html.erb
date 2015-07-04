@@ -5,14 +5,16 @@
 <table>
   <thead>
     <tr>
+      <th>Name</th>
       <th>Email</th>
-        <th colspan="1"></th>
+        <th colspan="2"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @users.each do |user| %>
       <tr>
+        <td> <%= user.first_name %> <%= user.last_name  %></td>
         <td><%= user.email %></td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
