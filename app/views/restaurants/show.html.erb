@@ -4,15 +4,10 @@
 
 
 
-<p class ="name">  <strong>Name: <%= @restaurant.name %></strong> </p>
-<p class ="location">  <strong>Location: <%= @restaurant.location %></strong> </p>
-<p class ="capacity">  <strong>Capacity: <%= @restaurant.capacity %></strong> </p>
-
-<% if current_user %>
-  <h4>New reservation</h4>
-  <% render 'reservations/form' %>
-<% end %>
-
-<%= link_to 'New restaurant', new_restaurant_path %>
+<p class ="name">  <strong>Name: </strong><%= @restaurant.name %> </p>
+<p class ="location">  <strong>Location:</strong>  <%= @restaurant.location %></p>
+<p class ="capacity">  <strong>Capacity:</strong>  <%= @restaurant.capacity %></p>
 
 
+<h4>New reservation</h4>
+ <%= render 'reservations/form' %>

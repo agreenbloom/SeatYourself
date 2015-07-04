@@ -2,6 +2,7 @@ class Reservation < ActiveRecord::Base
   belongs_to :user
   belongs_to :restaurant
 
+
   #validate :not_full, on :create
 
   #private
