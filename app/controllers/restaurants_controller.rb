@@ -48,6 +48,6 @@ class RestaurantsController < ApplicationController
 
   private
   def restaurant_params
-    params.require(:restaurant).permit(:Partysize)
+    params.require(:restaurant).permit(:Partysize, :category_id, :location)
   end
 end
