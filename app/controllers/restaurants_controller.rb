@@ -1,4 +1,5 @@
 class RestaurantsController < ApplicationController
+
   def index
     @restaurants = Restaurant.all
   end
@@ -48,6 +49,6 @@ class RestaurantsController < ApplicationController
 
   private
   def restaurant_params
-    params.require(:restaurant).permit(:Partysize, :category_id, :location)
+    params.require(:restaurant).permit(:party_size, :category_id, :location)
   end
 end

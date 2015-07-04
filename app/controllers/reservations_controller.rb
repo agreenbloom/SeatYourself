@@ -1,15 +1,11 @@
 class ReservationsController < ApplicationController
   before_filter :load_restaurant
 
-
-
-
   def show
     @reservation = Reservation.find(params[:id])
   end
 
   def create
-    @restaurant = Restaurant.find(params[:restaurant_id])
     @reservation = @restaurant.reservations.build(reservation_params)
       @reservation.user = current_user
 
@@ -21,14 +17,14 @@ class ReservationsController < ApplicationController
   end
 
   def index
-    @reservation = Reservation.all
+    @reservations = Reservation.all
   end
 
 
   def destroy
     @reservation = Reservation.find(params[:id])
     @reservation.destroy
-    redirect_to @restaurants
+    redirect_to restaurants_path
   end
 
 
@@ -43,5 +39,3 @@ private
     @restaurant = Restaurant.find(params[:restaurant_id])
   end
 end
-
-

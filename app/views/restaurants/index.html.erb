@@ -1,5 +1,12 @@
 <h1>Restaurants</h1>
 
-<div class="restaurants">
-<%= render @restaurants  %>
-</div>
+<% @restaurants.each do |r|  %>
+
+  <div>
+    <h2><%= r.name %></h2>
+    <p>Location: <%= r.location %></p>
+    <p>Capacity: <%= r.capacity %></p>
+    <%= link_to 'Make a Reservation', restaurant_path(r) %>
+  </div>
+
+<% end %>

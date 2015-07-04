@@ -8,8 +8,8 @@ class Restaurant < ActiveRecord::Base
   private
 
   def not_full?
-    @reservation = reservations.where(start_time: start_time).sum(:Partysize)
-    Partysize <= capacity
+    @reservation = reservations.where(start_time: start_time).sum(:party_size)
+    :party_size <= capacity
   end
 
 
