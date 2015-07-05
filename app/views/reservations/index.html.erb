@@ -1,9 +1,19 @@
 <h1>Reservations</h1>
 
-<p>
-  <%= @Reservations  %>
+<% if current_user %>
+  <%= @user.reservations.each do |reservation| %>
 
-</p>
+    <div>
+      <h3>reservation.date</h3>
+      <p>reservation.location</p>
+      <p>reservation.party_size</p>
+    </div>
+
+  <% end %>
+
+<% else %>
+  <p>Fool, you got no reservations!</p>
+<% end %>
 
 
 

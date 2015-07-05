@@ -1,14 +1,13 @@
+<h1>My Reservations</h1>
 <p id="notice"><%= notice %></p>
 
-<p>
-<strong>First Name:</strong>
-  <%= @user.first_name %>
-  <strong>Last Name:</strong>
-  <%= @user.last_name %>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+<% @user.reservations.each do |r| %>
+  <br>
+  <div>
+    <h2><%= r.date %></h2>
+    <p>Restaurant: <%= r.restaurant.name %></p>
+    <p>Location: <%= r.restaurant.location %></p>
+    <p>Party Size: <%= r.party_size %></p>
+  </div>
 
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<% end %>
