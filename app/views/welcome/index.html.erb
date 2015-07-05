@@ -1,0 +1,6 @@
+<h1>Welcome!</h1>
+<%= link_to 'categories', categories_path %>
+  <% @categories = Category.all %>
+
+<%= link_to 'restaurants', restaurants_path %>
+  <% @restaurants = Restaurant.limit(10) %>

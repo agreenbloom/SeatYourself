@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root :to => 'restaurants#index'
+  root :to => 'welcome#index'
 
   resources :user_sessions
   resources :users

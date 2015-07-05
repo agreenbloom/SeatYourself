@@ -1,6 +1,12 @@
-<h1>Categories</h1>
+<h1> <%= @category.name %></h1>
 
 
-  <% @categories.order("name asc").each do |category| %>
-    <%= link_to category.name, "/categories/#{category.id}" %><br>
+  <% @category.restaurants.order("created_at desc").each do |restaurant| %>
+    <div>
+      <%= link_to restaurant_path(restaurant) %>
+      <%=restaurant.name%>
+      <%= link_to "Book a table:",  new_restaurant_booking_path(restaurant) %>
+    </div>
   <%end%>
+
+</div>

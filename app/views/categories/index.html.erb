@@ -3,3 +3,4 @@
 <% @categories.order("name asc").each do |category| %>
   <%= link_to category.name, "/categories/#{category.id}" %><br>
 <%end%>
+
