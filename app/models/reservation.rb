@@ -17,4 +17,6 @@ class Reservation < ActiveRecord::Base
     end
   end
 
+
+
 end
