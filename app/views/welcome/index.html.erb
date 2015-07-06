@@ -1,6 +1,16 @@
 <h1>Welcome!</h1>
-<%= link_to 'categories', categories_path %>
-  <% @categories = Category.all %>
+
+  <% @categories.order("created_at desc").each do |category| %>
+    <div>
+      <%= link_to category.name, category_path(category) %>
+    </div>
+  <%end%>
+
+
 
 <%= link_to 'restaurants', restaurants_path %>
-  <% @restaurants = Restaurant.limit(10) %>
+  <% @restaurants.order("created_at desc").each do |restaurant| %>
+    <div>
+      <%= link_to restaurant.name, restaurant_path(restaurant) %>
+    </div>
+  <%end%>

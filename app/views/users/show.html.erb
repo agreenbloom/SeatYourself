@@ -4,7 +4,8 @@
 <% @user.reservations.each do |r| %>
   <br>
   <div>
-    <h2><%= r.date %></h2>
+
+    <h2><%= r.date.in_time_zone.strftime('%e %b %Y %H:%M %p') %> </h2>
     <p>Restaurant: <%= r.restaurant.name %></p>
     <p>Location: <%= r.restaurant.location %></p>
     <p>Party Size: <%= r.party_size %></p>
