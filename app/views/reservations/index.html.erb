@@ -1,7 +1,7 @@
 <h1>Reservations</h1>
 
 <% if current_user %>
-  <%= @user.reservations.each do |reservation| %>
+  <%= current_user.reservations.each do |reservation| %>
 
     <div>
       <h3>reservation.date</h3>
