@@ -1,9 +1,8 @@
-<h1> <%= @restaurant.name  %></h1>
+
 
 <p id="notice"><%= notice %></p>
 
-<p class ="location">  <strong>Location:</strong>  <%= @restaurant.location %></p>
-<p class ="capacity">  <strong>Capacity:</strong>  <%= @restaurant.capacity %></p>
+ <%= render :partial => "restaurant" %>
 
  <% if current_user %>
   <h4>New reservation</h4>
