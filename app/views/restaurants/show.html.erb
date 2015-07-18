@@ -2,7 +2,9 @@
 
 <p id="notice"><%= notice %></p>
 
- <%= render :partial => "restaurant" %>
+<div id="restuarants">
+  <%= render @restaurant%>
+</div>
 
  <% if current_user %>
   <h4>New reservation</h4>

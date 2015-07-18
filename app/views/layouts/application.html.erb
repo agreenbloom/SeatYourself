@@ -14,7 +14,6 @@
       <%= link_to "Logout", :logout, method: :post %>
       <%= link_to 'My Reservations', user_path(current_user) %>
       <%= link_to 'restaraunts', restaurants_path%>
-      <%= search_field(:restaraunts, :name) %>
     <% else %>
       <%= link_to "Register", new_user_path %> |
       <%= link_to "Login", :login %>
