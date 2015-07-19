@@ -8,8 +8,25 @@
 
  <% if current_user %>
   <h4>New reservation</h4>
-  <%= render 'reservations/form' %>
+  <%= render :partial => 'reservations/form' %>
+
 <% else %>
   <h4>Sign Up to make a reservation<h4>
   <%= link_to 'Sign Up', new_user_path %>
  <% end %>
+
+
+
+<!-- $('body').append("<%= escape_javascript(render @restaurant) %>"); -->
+
+<script type="text/javascript">
+
+  $(document).ready(function() {
+     $("#new_reservation")
+        .on('ajax:beforeSend', function() {alert("loading!");})
+        .on('ajax:success', function(data, status, xhr) {alert("success!");})
+        .on('ajax:error', function(xhr, status, error) {alert("error!");})
+        .on('ajax:complete', function() {alert("complete!");});
+  });
+
+</script>

@@ -3,7 +3,10 @@ class Restaurant < ActiveRecord::Base
 
   has_many :reservations
   belongs_to :category
+  has_many :locations
 
+  geocoded_by :address
+  after_validation :geocode
 
   private
 

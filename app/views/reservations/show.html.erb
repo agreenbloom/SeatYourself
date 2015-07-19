@@ -1,3 +1,5 @@
+<%= render :partial => "reservations" %>
+
 <h1> <%= @restaurant.name %> Reservations </h1>
 
 <%= @reservations.each do |reservation|  %>
@@ -10,4 +12,4 @@
   <div>
     <p> <%= reservation.date %></p>
   </div>
-<% end %>
+<%  %>

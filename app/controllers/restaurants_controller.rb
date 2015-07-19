@@ -1,6 +1,7 @@
 class RestaurantsController < ApplicationController
 
   def index
+
     @restaurants = if params[:search]
       Restaurant.where("LOWER(name) LIKE LOWER(?)", "%#{params[:search]}%")
     else
@@ -58,6 +59,6 @@ class RestaurantsController < ApplicationController
 
   private
   def restaurant_params
-    params.require(:restaurant).permit(:party_size, :category_id, :location, :capacity)
+    params.require(:restaurant).permit(:party_size, :category_id, :location, :capacity, :address)
   end
 end

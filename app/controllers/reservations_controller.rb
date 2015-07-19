@@ -9,10 +9,14 @@ class ReservationsController < ApplicationController
     @reservation = @restaurant.reservations.build(reservation_params)
       @reservation.user = current_user
 
-    if @reservation.save
-      redirect_to restaurants_path, notice: 'Reservation Created Successfully'
-    else
-      render 'restaurants/show', notice: 'The time selected is unavailable'
+    respond_to do |format|
+      if @reservation.save
+        format.html { redirect_to restaurant_path(@restaurant), notice: 'Reservation Created Successfully' }
+        format.js {}
+      else
+        format.html { render 'restaurants/show', notice: 'The time selected is unavailable' }
+        format.js {}
+      end
     end
   end
 
