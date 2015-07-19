@@ -14,6 +14,26 @@
 
   <body>
 
+
+ <nav class="top-bar" data-topbar>
+  <ul class="title-area">
+    <% if current_user %>
+      <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
+      <%= link_to "Logout", :logout, method: :post %>
+      <%= link_to 'My Reservations', user_path(current_user) %>
+      <%= link_to 'restaraunts', restaurants_path%>
+    <% else %>
+      <%= link_to "Register", new_user_path %> |
+      <%= link_to "Login", :login %>
+    <% end %>
+  </ul>
+  </div>
+  <div>
+    <p id="notice"><%= flash[:notice] %></p>
+    <p id="alert"><%= flash[:alert] %></p>
+  </div>
+</nav>
+
     <%= yield %>
 
   </body>
