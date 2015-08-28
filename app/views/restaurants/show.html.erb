@@ -5,11 +5,24 @@
 <div id="restuarants">
   <%= render @restaurant%>
 
-
-
-
-
 </div>
+
+<section>
+  <div id="map-canvas" data-longitude="<%= @restaurant.longitude.to_f %>" data-latitude="<%= @restaurant.latitude.to_f %>"></div>
+</section>
+
+
+<section>
+<% if @nearby_restaurants.any? %>
+<h3> Nearby Restaurants </h3>
+  <ul>
+    <% @nearby_restaurants.each do |r| %>
+      <li> <%= r.name %> - <%= r.distance  %> </li>
+    <% end %>
+  </ul>
+<% end %>
+</section>
+
 
  <% if current_user %>
   <h4>New reservation</h4>
@@ -22,12 +35,5 @@
 
 
 
-<!-- $('body').append("<%= escape_javascript(render @restaurant) %>"); -->
 
-<script type="text/javascript">
 
-  $(document).ready(function() {
-
-  });
-
-</script>

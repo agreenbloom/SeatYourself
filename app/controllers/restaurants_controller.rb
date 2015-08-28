@@ -4,13 +4,16 @@ class RestaurantsController < ApplicationController
 
     @restaurants = if params[:search]
       Restaurant.where("LOWER(name) LIKE LOWER(?)", "%#{params[:search]}%")
+      Restaurant.near(params[:search], 1, units: :km)
+    elsif params[:longitude] && params[:latitude]
+      Restaurant.near([params[:latitude], params[:longitude]], 1, units: :km)
     else
       Restaurant.all
     end
 
     respond_to do |format|
       format.html
-
+      format.js
       format.json do
         # render json: @restaurants.map { |r|
         #   {
@@ -37,6 +40,7 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find(params[:id])
+    @nearby_restaurants = @restaurant.nearbys(1, units: :km)
 
     if current_user
       @reservation = @restaurant.reservations.build

@@ -5,8 +5,9 @@ class Restaurant < ActiveRecord::Base
   belongs_to :category
   has_many :locations
 
-  geocoded_by :address
+  geocoded_by :location
   after_validation :geocode
+
 
   private
 

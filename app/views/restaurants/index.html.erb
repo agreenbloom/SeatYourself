@@ -1,4 +1,8 @@
 <h1>Restaurants</h1>
+<section>
+  <button id="current-location">Find Restaurants Nearby</button>
+</section>
+
 
 <%= form_tag restaurants_path, method: :get, authentication: false, id: 'search-form' do %>
   <%= text_field_tag :search, params[:search] %>
