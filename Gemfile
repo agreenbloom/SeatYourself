@@ -14,8 +14,9 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+gem 'bourbon'
+gem 'neat'
 
-gem 'foundation-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -30,6 +31,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'sorcery'
+gem "figaro"
+
 #location gem to use maps to locate restaurants
 gem 'geocoder'
 

@@ -10,7 +10,15 @@ class RestaurantsController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.js
+
+      format.json do
+        # render json: @restaurants.map { |r|
+        #   {
+        #     id: r.id;
+        #     name: r.name;
+        #   }
+        # }
+      end
     end
   end
 
@@ -24,7 +32,6 @@ class RestaurantsController < ApplicationController
       redirect_to @restaurant
     else
       render :new
-
     end
   end
 

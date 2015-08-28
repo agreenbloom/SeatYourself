@@ -1,6 +1,5 @@
 <h1> <%= @category.name %></h1>
 
-
   <% @category.restaurants.order("created_at desc").each do |restaurant| %>
     <div>
       <%= link_to restaurant.name, restaurant_path(restaurant) %>
@@ -8,3 +7,26 @@
   <%end%>
 
 </div>
+
+
+<section>
+  <div id="map-canvas"> data-longitude
+  </div>
+
+</section>
+
+ <section>
+<% @restaurants_nearby.each do |r| %>
+  <li>
+  <%= r.name  %> - <%= r.distance %>
+  </li>
+<% end %>
+
+</section>
+
+
+<%= javascript_tag do %>
+  window.nearbys = <%= raw @restaurants.nearby.map{|nr| {lat: nr.latitude, lng: nr.longitude } }.to_json %>
+<% end %>
+
+
