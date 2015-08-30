@@ -3,7 +3,7 @@
 <h1> <%= @restaurant.name %> Reservations </h1>
 
 <%= @reservations.each do |reservation|  %>
-  <div>
+  <div class="reserve">
    <p> <%=reservation.user.first_name %> <%=reservation.user.last_name %> </p>
   </div>
   <div>

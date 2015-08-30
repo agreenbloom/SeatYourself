@@ -3,7 +3,7 @@
 
 <% @user.reservations.each do |r| %>
   <br>
-  <div>
+  <div class="reserve">
 
     <h2><%= r.date.in_time_zone.strftime('%e %b %Y %H:%M %p') %> </h2>
     <p>Restaurant: <%= r.restaurant.name %></p>

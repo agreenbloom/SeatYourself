@@ -1,3 +1,36 @@
-// Place all the styles related to the Welcome controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+h1.welcome {
+    font-size: 2em;
+}
+
+.category {
+    font-size: 1.5em;
+    line-height: 2rem;
+    text-align: center;
+
+  @include media($medium-screen-only) {
+    @include span-columns(2 of 4);
+    @include omega(2n);
+  }
+
+  @include media($large-screen-up) {
+    @include span-columns(4 of 12);
+    @include omega(3n);
+  }
+
+}
+
+.restaurants{
+  display: inline-block;
+  text-align: center;
+
+  h3{
+    text-align: center;
+    line-height: 2rem;
+    font-size: 1.85em;
+  }
+
+  .restaurant {
+    display: inline;
+    padding: 5px;
+  }
+}

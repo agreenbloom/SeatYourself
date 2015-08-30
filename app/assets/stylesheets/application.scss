@@ -1,11 +1,12 @@
 @import 'normalize';
 
 @import 'bourbon';
-@import 'neat';
 @import 'base/base';
+@import 'neat';
 
 
 @import 'welcome.scss';
 @import 'users.scss';
 @import 'scaffolds.scss';
 @import 'restaurants.scss';
+@import 'reservations.scss';

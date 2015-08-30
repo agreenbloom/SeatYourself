@@ -1,17 +1,18 @@
-<h1>Welcome!</h1>
+<h1 class="welcome">Welcome!</h1>
 
 <div class= 'categories'>
   <% @categories.order("created_at desc").each do |category| %>
-    <div>
+    <div class="category">
       <%= link_to category.name, category_path(category) %>
+      <%= image_tag(src="http://lorempixel.com/400/200/food/") %>
     </div>
   <%end%>
 </div>
 
-<div class = restaurants>
-<%= link_to 'restaurants', restaurants_path %>
+<div class = "restaurants">
+<h3>  <%= link_to 'Restaurants', restaurants_path %> </h3>
   <% @restaurants.order("created_at desc").each do |restaurant| %>
-    <div>
+    <div class= "restaurant">
       <%= link_to restaurant.name, restaurant_path(restaurant) %>
     </div>
   <%end%>
