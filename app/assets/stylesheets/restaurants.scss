@@ -3,9 +3,18 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .restaurant{
   margin: 0 auto;
-  width: 50%;
+  display: block;
+  text-align: center;
+  border: inset 3px rgba(#000, 0.06);
 
-  .restinfo{
-    float: right;
+  @include media($medium-screen-only) {
+    @include span-columns(2 of 4);
+    @include omega(2n);
   }
+
+  @include media($large-screen-up) {
+    @include span-columns(4 of 12);
+    @include omega(3n);
+  }
+
 }

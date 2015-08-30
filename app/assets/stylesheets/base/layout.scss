@@ -1,13 +1,17 @@
 nav.top-bar {
-    background-color: black;
-    color: white;
-    margin: 0;
-    padding: 0;
-    line-height: 40px;
-    font-size: 2em;
+  background-color: black;
+  color: white;
+  margin: 0;
+  padding: 0;
+  font-size: 2em;
+  height: $title-bar-height;
+  text-align: center;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
-h1 {
-    text-align: center;
-    font-size: 3em;
-}
+// h1 {
+//     text-align: center;
+//     font-size: 3em;
+// }

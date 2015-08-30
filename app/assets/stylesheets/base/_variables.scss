@@ -1,6 +1,6 @@
-// Neat Visual Grid
-$visual-grid: true;
-$visual-grid-color: lighten(red, 10%);
+// // Neat Visual Grid
+// $visual-grid: true;
+// $visual-grid-color: lighten(red, 10%);
 
 // Typography
 $base-font-family: $helvetica;
@@ -44,3 +44,7 @@ $form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $l
 // Animations
 $base-duration: 150ms;
 $base-timing: ease;
+
+// Title Bar
+$title-bar-height: rem(40);
+
